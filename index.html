@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <title>Sidebar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: antiquewhite;
+            width: 100%;
+            height: 100vh;;
+        }
+        .sidebar{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            background-color: rosybrown;
+            width: 200px;
+            height:100vh;
+            visibility: hidden;
+            box-shadow: ghostwhite;
+            
+
+
+        }
+
+        .menu-item{
+            padding: 10px;
+           margin: 10px 30px;
+            display: flex;
+           align-items: center;
+            cursor: pointer;
+        }
+
+        .menu-item:hover{
+            background-color:lightgrey;
+            padding:10px;
+        }
+
+        .menu-icon{
+            font-size:15px;
+        }
+
+        .menubar{
+            position: fixed;
+            top:10px;
+            left: 10px;
+            cursor: pointer;
+
+        }
+       .cross-menu{
+        text-align: right;
+        color: black;
+        padding: 10px;
+        cursor: pointer;
+       }
+        
+
+        .menu-text{
+            text-decoration: none;
+            color: black;
+            margin-left: 5px;
+            margin: 5px 3px;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-bars menubar "  onclick="openSidebar()" id="menubarElement"></i>
+    <div class="sidebar" id="sidebar">
+        <div class="cross-menu" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark "></i>
+            </div>
+    
+<div>
+            <div class="menu-item">
+        <i class="fa-solid fa-house menu-icon"></i>
+        <a href="#" class="menu-text">Home</a>
+     </div>
+
+     
+        <div class="menu-item">
+            <i class="fa-solid fa-address-card menu-icon"></i>
+            <a href="#" class="menu-text">Address-card</a>
+     </div>
+     
+     
+        <div class="menu-item">
+            <i class="fa-solid fa-phone menu-icon"></i>
+            <a href="#" class="menu-text">Contact</a>
+     </div>
+     
+     
+        <div class="menu-item">
+            <i class="fa-solid fa-right-to-bracket menu-icon"></i>
+            <a href="#" class="menu-text">sign-up</a>
+     </div>
+    </div>
+    </div>
+    
+
+    <script>
+        const sidebarElement = document.getElementById("sidebar")
+        const menubarElement = document.getElementById("menu")
+
+        function openSidebar(){
+            sidebarElement.style.visibility ="visible";
+            menubarElement.style.visibility = "hidden";
+        }
+        function closeSidebar(){ 
+            sidebarElement.style.visibility ="hidden";   
+            menubarElement.style.visibility = "visible";
+        }
+
+        
+    </script>
+</body>
+</html>
